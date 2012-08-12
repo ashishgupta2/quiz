@@ -1,0 +1,16 @@
+2012/08/12 15:28:31 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "question".' in /Users/ashish/Sites/yii/framework/web/CWebApplication.php:280
+Stack trace:
+#0 /Users/ashish/Sites/yii/framework/web/CWebApplication.php(135): CWebApplication->runController('question')
+#1 /Users/ashish/Sites/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /Users/ashish/Sites/quiz/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/~ashish/quiz/index.php?r=question
+---
+2012/08/12 15:28:39 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "question".' in /Users/ashish/Sites/yii/framework/web/CWebApplication.php:280
+Stack trace:
+#0 /Users/ashish/Sites/yii/framework/web/CWebApplication.php(135): CWebApplication->runController('question')
+#1 /Users/ashish/Sites/yii/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /Users/ashish/Sites/quiz/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/~ashish/quiz/index.php?r=question
+---
