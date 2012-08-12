@@ -22,5 +22,9 @@ $this->menu=array(
 		'name',
 		'description',
 		'time_limit',
+		'create_time',
+		'created_by',
+		'update_time',
+		'updated_by',
 	),
 )); ?>

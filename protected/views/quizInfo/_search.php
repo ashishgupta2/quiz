@@ -25,6 +25,26 @@
 		<?php echo $form->textField($model,'time_limit'); ?>
 	</div>
 
+	<div class="row">
+		<?php echo $form->label($model,'create_time'); ?>
+		<?php echo $form->textField($model,'create_time'); ?>
+	</div>
+
+	<div class="row">
+		<?php echo $form->label($model,'created_by'); ?>
+		<?php echo $form->textField($model,'created_by'); ?>
+	</div>
+
+	<div class="row">
+		<?php echo $form->label($model,'update_time'); ?>
+		<?php echo $form->textField($model,'update_time'); ?>
+	</div>
+
+	<div class="row">
+		<?php echo $form->label($model,'updated_by'); ?>
+		<?php echo $form->textField($model,'updated_by'); ?>
+	</div>
+
 	<div class="row buttons">
 		<?php echo CHtml::submitButton('Search'); ?>
 	</div>

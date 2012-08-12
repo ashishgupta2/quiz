@@ -9,6 +9,10 @@
  * @property string $question
  * @property string $question_type
  * @property integer $sort_order
+ * @property string $create_time
+ * @property integer $created_by
+ * @property string $update_time
+ * @property integer $updated_by
  *
  * The followings are the available model relations:
  * @property Option[] $options
@@ -42,11 +46,12 @@ class Question extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('quizinfo_id, sort_order', 'numerical', 'integerOnly'=>true),
+			array('create_time, created_by, update_time', 'required'),
+			array('quizinfo_id, sort_order, created_by, updated_by', 'numerical', 'integerOnly'=>true),
 			array('question, question_type', 'length', 'max'=>256),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
-			array('id, quizinfo_id, question, question_type, sort_order', 'safe', 'on'=>'search'),
+			array('id, quizinfo_id, question, question_type, sort_order, create_time, created_by, update_time, updated_by', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -74,6 +79,10 @@ class Question extends CActiveRecord
 			'question' => 'Question',
 			'question_type' => 'Question Type',
 			'sort_order' => 'Sort Order',
+			'create_time' => 'Create Time',
+			'created_by' => 'Created By',
+			'update_time' => 'Update Time',
+			'updated_by' => 'Updated By',
 		);
 	}
 
@@ -93,6 +102,10 @@ class Question extends CActiveRecord
 		$criteria->compare('question',$this->question,true);
 		$criteria->compare('question_type',$this->question_type,true);
 		$criteria->compare('sort_order',$this->sort_order);
+		$criteria->compare('create_time',$this->create_time,true);
+		$criteria->compare('created_by',$this->created_by);
+		$criteria->compare('update_time',$this->update_time,true);
+		$criteria->compare('updated_by',$this->updated_by);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,

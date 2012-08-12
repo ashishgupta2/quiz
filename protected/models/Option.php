@@ -10,6 +10,10 @@
  * @property string $option_type
  * @property string $option_info
  * @property integer $weightage
+ * @property string $create_time
+ * @property integer $created_by
+ * @property string $update_time
+ * @property integer $updated_by
  *
  * The followings are the available model relations:
  * @property Question $ques
@@ -42,11 +46,12 @@ class Option extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('ques_id, weightage', 'numerical', 'integerOnly'=>true),
+			array('create_time, created_by, update_time, updated_by', 'required'),
+			array('ques_id, weightage, created_by, updated_by', 'numerical', 'integerOnly'=>true),
 			array('option_text, option_type, option_info', 'length', 'max'=>256),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
-			array('id, ques_id, option_text, option_type, option_info, weightage', 'safe', 'on'=>'search'),
+			array('id, ques_id, option_text, option_type, option_info, weightage, create_time, created_by, update_time, updated_by', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -74,6 +79,10 @@ class Option extends CActiveRecord
 			'option_type' => 'Option Type',
 			'option_info' => 'Option Info',
 			'weightage' => 'Weightage',
+			'create_time' => 'Create Time',
+			'created_by' => 'Created By',
+			'update_time' => 'Update Time',
+			'updated_by' => 'Updated By',
 		);
 	}
 
@@ -94,6 +103,10 @@ class Option extends CActiveRecord
 		$criteria->compare('option_type',$this->option_type,true);
 		$criteria->compare('option_info',$this->option_info,true);
 		$criteria->compare('weightage',$this->weightage);
+		$criteria->compare('create_time',$this->create_time,true);
+		$criteria->compare('created_by',$this->created_by);
+		$criteria->compare('update_time',$this->update_time,true);
+		$criteria->compare('updated_by',$this->updated_by);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,

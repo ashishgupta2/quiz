@@ -8,6 +8,10 @@
  * @property string $name
  * @property string $description
  * @property string $time_limit
+ * @property string $create_time
+ * @property integer $created_by
+ * @property string $update_time
+ * @property integer $updated_by
  *
  * The followings are the available model relations:
  * @property Question[] $questions
@@ -40,11 +44,13 @@ class QuizInfo extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
+			array('create_time, created_by, update_time, updated_by', 'required'),
+			array('created_by, updated_by', 'numerical', 'integerOnly'=>true),
 			array('name, description', 'length', 'max'=>256),
 			array('time_limit', 'safe'),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
-			array('id, name, description, time_limit', 'safe', 'on'=>'search'),
+			array('id, name, description, time_limit, create_time, created_by, update_time, updated_by', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -70,6 +76,10 @@ class QuizInfo extends CActiveRecord
 			'name' => 'Name',
 			'description' => 'Description',
 			'time_limit' => 'Time Limit',
+			'create_time' => 'Create Time',
+			'created_by' => 'Created By',
+			'update_time' => 'Update Time',
+			'updated_by' => 'Updated By',
 		);
 	}
 
@@ -88,6 +98,10 @@ class QuizInfo extends CActiveRecord
 		$criteria->compare('name',$this->name,true);
 		$criteria->compare('description',$this->description,true);
 		$criteria->compare('time_limit',$this->time_limit,true);
+		$criteria->compare('create_time',$this->create_time,true);
+		$criteria->compare('created_by',$this->created_by);
+		$criteria->compare('update_time',$this->update_time,true);
+		$criteria->compare('updated_by',$this->updated_by);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,

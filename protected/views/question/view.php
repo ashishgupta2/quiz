@@ -23,5 +23,9 @@ $this->menu=array(
 		'question',
 		'question_type',
 		'sort_order',
+		'create_time',
+		'created_by',
+		'update_time',
+		'updated_by',
 	),
 )); ?>

@@ -24,5 +24,23 @@
 	<?php echo CHtml::encode($data->weightage); ?>
 	<br />
 
+	<b><?php echo CHtml::encode($data->getAttributeLabel('create_time')); ?>:</b>
+	<?php echo CHtml::encode($data->create_time); ?>
+	<br />
+
+	<?php /*
+	<b><?php echo CHtml::encode($data->getAttributeLabel('created_by')); ?>:</b>
+	<?php echo CHtml::encode($data->created_by); ?>
+	<br />
+
+	<b><?php echo CHtml::encode($data->getAttributeLabel('update_time')); ?>:</b>
+	<?php echo CHtml::encode($data->update_time); ?>
+	<br />
+
+	<b><?php echo CHtml::encode($data->getAttributeLabel('updated_by')); ?>:</b>
+	<?php echo CHtml::encode($data->updated_by); ?>
+	<br />
+
+	*/ ?>
 
 </div>

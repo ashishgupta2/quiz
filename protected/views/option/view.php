@@ -24,5 +24,9 @@ $this->menu=array(
 		'option_type',
 		'option_info',
 		'weightage',
+		'create_time',
+		'created_by',
+		'update_time',
+		'updated_by',
 	),
 )); ?>
